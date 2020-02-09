@@ -1,0 +1,25 @@
+[debug] [2020-02-08T20:08:49.479Z] ----------------------------------------------------------------------
+[debug] [2020-02-08T20:08:49.482Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\PC\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2020-02-08T20:08:49.482Z] CLI Version:   7.12.1
+[debug] [2020-02-08T20:08:49.482Z] Platform:      win32
+[debug] [2020-02-08T20:08:49.482Z] Node Version:  v12.14.1
+[debug] [2020-02-08T20:08:49.483Z] Time:          Sat Feb 08 2020 17:08:49 GMT-0300 (GMT-03:00)
+[debug] [2020-02-08T20:08:49.483Z] ----------------------------------------------------------------------
+[debug] [2020-02-08T20:08:49.484Z] 
+[debug] [2020-02-08T20:08:49.492Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-02-08T20:08:49.493Z] > authorizing via signed-in user
+[debug] [2020-02-08T20:08:49.493Z] [iam] checking project gestorscrum for permissions ["firebase.projects.get"]
+[debug] [2020-02-08T20:08:49.495Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/gestorscrum:testIamPermissions  
+
+[debug] [2020-02-08T20:08:50.688Z] <<< HTTP RESPONSE 200
+[debug] [2020-02-08T20:08:50.690Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/gestorscrum  
+ 
+[debug] [2020-02-08T20:08:51.796Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\PC\Desktop\Proyectos de react\gestor'...
+[info] 
+[debug] [2020-02-08T20:08:51.801Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/gestorscrum/webApps/-/config  
+ 
+[debug] [2020-02-08T20:08:53.124Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: build
+[info] +  hosting: Local server: http://localhost:5000
