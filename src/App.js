@@ -1,18 +1,20 @@
 import React from 'react';
 import './App.css'; 
-import * as firebase from 'firebase';
+//import * as firebase from 'firebase';
 import HolaMundo from './Views/HolaMundo';
+import Button from '@material-ui/core/Button';
 
 
-const firebaseConfig = {
 
-};
 
-firebase.initializeApp(firebaseConfig)
+//firebase.initializeApp(firebaseConfig)
 
 function App() {
   return (
-    <HolaMundo/>
+    <React.Fragment>
+      <HolaMundo/>
+    </React.Fragment>
+    
   );
 }
 

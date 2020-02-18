@@ -12,7 +12,7 @@ function HolaController2(){
 
         
     } catch (error) {
-        console.log(" Rompio en Repo");
+        console.log(" Rompio en Controller");
     }
 }
 

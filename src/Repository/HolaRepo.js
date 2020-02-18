@@ -1,16 +1,30 @@
 import { Component } from 'react';
 import firebase from '../config/firebase';
-const Hola = 'hola';
+const Hola = 'holaMundo';
+
+
+var holaDatabase = firebase.db;
+
+
 
 
 
 async function HolaRepo(){
 
     try {
+        await holaDatabase.collection(Hola).get().then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+                console.log(doc)
+                console.log(`${doc.Hola} => ${doc.data().Hola}`);
+            });
+        });
         
-        return firebase.log('Estoy en Repo') 
+        //console.log(holaDatabase);
+        
+
     } catch (error) {
-        console.log(" Rompio en Controller");
+        console.log(error);
+        console.log(" Rompio en Repo");
     }
 
 }
