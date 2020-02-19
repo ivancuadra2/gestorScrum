@@ -1,8 +1,9 @@
 import React from 'react';
 import './App.css'; 
-//import * as firebase from 'firebase';
-import HolaMundo from './Views/HolaMundo';
-import Button from '@material-ui/core/Button';
+import { BrowserRouter, Route, withRouter  } from "react-router-dom";
+import SignIn from './Views/LogIn/LogIn2';
+import SignUp from './Views/LogIn/Login'
+
 
 
 
@@ -11,11 +12,14 @@ import Button from '@material-ui/core/Button';
 
 function App() {
   return (
-    <React.Fragment>
-      <HolaMundo/>
-    </React.Fragment>
+    <BrowserRouter>
+      <Route path="/login" component={SignIn} exact/>
+      <Route path="/login2" component={SignUp} exact/>
+    </BrowserRouter>
+    
     
   );
 }
 
 export default App;
+
