@@ -12,13 +12,15 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import GoogleButton from 'react-google-button';
+import firebase from '../../config/firebase';
 
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
       <Link color="inherit" href="https://material-ui.com/">
-        Your Website
+        Scrum game
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -37,6 +39,10 @@ const useStyles = makeStyles(theme => ({
     margin: theme.spacing(1),
     backgroundColor: theme.palette.secondary.main,
   },
+  
+  googleButton:{// Hoja de estilos del boton
+    width : '100%',
+  },
   form: {
     width: '100%', // Fix IE 11 issue.
     marginTop: theme.spacing(3),
@@ -48,6 +54,40 @@ const useStyles = makeStyles(theme => ({
 
 export default function SignUp() {
   const classes = useStyles();
+
+  async function signOut(){
+    
+  }
+  
+
+  async function signInGoogle(){
+    let auth = firebase.auth; 
+    let googleProvider = firebase.googleProvider;
+
+    console.log("auth : ", auth);
+
+    auth.getRedirectResult().then(function(result) {
+      console.log('result Credenctial:',result.credential);
+      if (result.credential) {
+        // This gives you a Google Access Token.
+        var token = result.credential.accessToken;
+      }
+      var user = result.user;
+    });
+    
+    // Start a sign in process for an unauthenticated user.
+    var provider =  googleProvider;
+    provider.addScope('profile');
+    provider.addScope('email');
+
+    auth.signInWithRedirect(provider);
+    
+
+    
+        
+
+}
+  
 
   return (
     <Container component="main" maxWidth="xs">
@@ -114,14 +154,16 @@ export default function SignUp() {
               />
             </Grid>
           </Grid>
+          <GoogleButton onClick = {signInGoogle}/>  
           <Button
             type="submit"
             fullWidth
             variant="contained"
             color="primary"
             className={classes.submit}
+            onClick= {signOut}
           >
-            Sign Up
+            Sign Out
           </Button>
           <Grid container justify="flex-end">
             <Grid item>
@@ -138,3 +180,4 @@ export default function SignUp() {
     </Container>
   );
 }
+

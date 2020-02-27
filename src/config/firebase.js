@@ -30,9 +30,9 @@ if (process.env.NODE_ENV === 'test') {
 class Firebase {
     constructor() {
         app.initializeApp(firebaseConfig);
-       // this.auth = app.auth();
+        this.auth = app.auth();
         this.db = firebase.firestore();
-        //this.googleProvider = new app.auth.GoogleAuthProvider();
+        this.googleProvider = new app.auth.GoogleAuthProvider();
         //this.admin = require("firebase-admin");
        // this.userValidated = null;
     }
