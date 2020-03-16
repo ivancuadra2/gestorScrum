@@ -11,6 +11,7 @@ import firebase from '../config/firebase';
 
     console.log("auth : ", auth);
     
+    
     //Esto está medio al pedo
     auth.getRedirectResult().then(function(result) {
       if (result.credential) {
@@ -26,7 +27,7 @@ import firebase from '../config/firebase';
     provider.addScope('profile');
     provider.addScope('email');
     auth.signInWithRedirect(provider);
-
+    return user;
 
 
 }

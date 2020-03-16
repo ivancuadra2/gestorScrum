@@ -14,6 +14,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import GoogleButton from 'react-google-button';
 import firebase from '../../config/firebase';
+import { withRouter } from "react-router-dom";
 
 function Copyright() {
   return (
@@ -52,8 +53,25 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function SignUp() {
+function SignUp(props) {
   const classes = useStyles();
+  // Descargo history de withRouter que guarda las rutas almacenadas
+  const { history } = props;
+  let auth = firebase.auth
+
+  auth.onAuthStateChanged(function(user) {
+    if (user) {
+      console.log('Nombre de usuario: ', user.displayName);
+      history.push('/');
+      // User is signed in.
+    } else {
+      alert('No estas loggeado')
+      // No user is signed in.
+    }
+  });
+
+
+  
 
   async function signOut(){
     
@@ -64,29 +82,65 @@ export default function SignUp() {
     let auth = firebase.auth; 
     let googleProvider = firebase.googleProvider;
 
-    console.log("auth : ", auth);
+    
 
-    auth.getRedirectResult().then(function(result) {
-      console.log('result Credenctial:',result.credential);
-      if (result.credential) {
-        // This gives you a Google Access Token.
-        var token = result.credential.accessToken;
-      }
-      var user = result.user;
-    });
+    
     
     // Start a sign in process for an unauthenticated user.
     var provider =  googleProvider;
     provider.addScope('profile');
     provider.addScope('email');
+    console.log('llego al sigIn')
 
     auth.signInWithRedirect(provider);
-    
 
+     
     
+    // await auth.getRedirectResult().then(function(result) {
+    //   if (result.credential) {
+    //     // This gives you a Google Access Token. You can use it to access the Google API.
         
+    //     var token = result.credential.accessToken;
+    //     alert('entraste');
+    //     // ...
+    //   }
+      
+    //   alert('no entraste');
+    //  // auth.signInWithRedirect(googleProvider);
+    //   // The signed-in user info.
+    //   var user = result.user;
+    //   console.log('user:', user);
+    // }).catch(function(error) {
+    //   console.log('error:' , error)
+    //   // Handle Errors here.
+    //   var errorCode = error.code;
+    //   var errorMessage = error.message;
+    //   // The email of the user's account used.
+    //   var email = error.email;
+    //   // The firebase.auth.AuthCredential type that was used.
+    //   var credential = error.credential;
+    //   // ...
+    // });
+
 
 }
+
+// async function  signInGoogle() {
+//   let auth = firebase.auth; 
+//   let googleProvider = firebase.googleProvider;
+//   let email =  auth.signInWithRedirect(googleProvider)
+//       .then((socialAuthUser) => {
+//           //alert(socialAuthUser.user.uid + socialAuthUser.user.email);
+//           console.log('email :', socialAuthUser.user);
+
+//           return socialAuthUser.user.email
+//       });
+//   return email;
+// }
+  
+
+
+
   
 
   return (
@@ -180,4 +234,6 @@ export default function SignUp() {
     </Container>
   );
 }
+
+export default withRouter(SignUp);
 

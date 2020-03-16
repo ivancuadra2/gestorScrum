@@ -37,6 +37,22 @@ class Firebase {
        // this.userValidated = null;
     }
 
+    signOut = () => console.log('llegue a sign out') ;//this.auth.signOut();
+
+    logout =  async () =>  {
+        console.log('logout :' ,  this.auth.signOut())
+        return await this.auth.signOut();
+    }
+       
+
+    getCurrentUsername() {
+        return this.auth.currentUser
+    }
+
+    getCurrentEmail(){
+        return this.auth.currentUser
+    }
+
 }
 
 export default new Firebase()
