@@ -16,17 +16,7 @@ const firebaseConfig = {
   };
 
 const firebase = require("firebase");
-//require("firebase/firestore");
 
-/*
-let firebaseConfig;
-if (process.env.NODE_ENV === 'test') {
-    firebaseConfig = process.env.FIREBASE_CONFIG;
-} else {
-    firebaseConfig = process.env.FIREBASE_CONFIG_GITLAB;
-}
-*/
- 
 class Firebase {
     constructor() {
         app.initializeApp(firebaseConfig);

@@ -59,32 +59,24 @@ function SignUp(props) {
   const { history } = props;
   let auth = firebase.auth
 
-  auth.onAuthStateChanged(function(user) {
-    if (user) {
-      console.log('Nombre de usuario: ', user.displayName);
-      history.push('/');
-      // User is signed in.
-    } else {
-      alert('No estas loggeado')
-      // No user is signed in.
-    }
-  });
+  function listenAuth(){
+    auth.onAuthStateChanged(function(user) {
+      if (user) {
+        console.log('Nombre de usuario: ', user.displayName);
+        history.push('/');
+        // User is signed in.
+      } else {
+        alert('No estas logeado')
+        // No user is signed in.
+      }
+    });}
 
 
-  
-
-  async function signOut(){
-    
-  }
-  
 
   async function signInGoogle(){
     let auth = firebase.auth; 
     let googleProvider = firebase.googleProvider;
 
-    
-
-    
     
     // Start a sign in process for an unauthenticated user.
     var provider =  googleProvider;
@@ -92,52 +84,13 @@ function SignUp(props) {
     provider.addScope('email');
     console.log('llego al sigIn')
 
-    auth.signInWithRedirect(provider);
-
-     
-    
-    // await auth.getRedirectResult().then(function(result) {
-    //   if (result.credential) {
-    //     // This gives you a Google Access Token. You can use it to access the Google API.
-        
-    //     var token = result.credential.accessToken;
-    //     alert('entraste');
-    //     // ...
-    //   }
-      
-    //   alert('no entraste');
-    //  // auth.signInWithRedirect(googleProvider);
-    //   // The signed-in user info.
-    //   var user = result.user;
-    //   console.log('user:', user);
-    // }).catch(function(error) {
-    //   console.log('error:' , error)
-    //   // Handle Errors here.
-    //   var errorCode = error.code;
-    //   var errorMessage = error.message;
-    //   // The email of the user's account used.
-    //   var email = error.email;
-    //   // The firebase.auth.AuthCredential type that was used.
-    //   var credential = error.credential;
-    //   // ...
-    // });
-
+    await auth.signInWithRedirect(provider);
 
 }
 
-// async function  signInGoogle() {
-//   let auth = firebase.auth; 
-//   let googleProvider = firebase.googleProvider;
-//   let email =  auth.signInWithRedirect(googleProvider)
-//       .then((socialAuthUser) => {
-//           //alert(socialAuthUser.user.uid + socialAuthUser.user.email);
-//           console.log('email :', socialAuthUser.user);
+listenAuth();
 
-//           return socialAuthUser.user.email
-//       });
-//   return email;
-// }
-  
+
 
 
 
@@ -215,7 +168,6 @@ function SignUp(props) {
             variant="contained"
             color="primary"
             className={classes.submit}
-            onClick= {signOut}
           >
             Sign Out
           </Button>

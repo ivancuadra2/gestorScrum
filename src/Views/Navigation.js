@@ -18,7 +18,8 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import firebase from '../config/firebase';
-import {withRouter} from 'react-router-dom';
+import LockTwoTone from '@material-ui/icons/LockTwoTone'
+//import {withRouter} from 'react-router-dom';
 
 
 
@@ -27,6 +28,7 @@ const drawerWidth = 240;
 const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
+    secodary : 'red',
   },
   appBar: {
     transition: theme.transitions.create(['margin', 'width'], {
@@ -122,7 +124,7 @@ export default function Navigation() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap>
+          <Typography variant="h6"  align = 'center'>
             Scrum Game
           </Typography>
         </Toolbar>
@@ -153,11 +155,11 @@ export default function Navigation() {
         <Divider />
         <List>
           
-            <ListItem onClick = {logOut} >
-              <ListItemIcon > Cerrar Sesion </ListItemIcon>
-              <ListItemText primary />
+            <ListItem onClick = {logOut} button key={'Cerrar Sesion'}>
+              <ListItemIcon ><LockTwoTone /> </ListItemIcon>
+              <ListItemText primary={'Cerrar Sesion'} />
             </ListItem>
-          
+        
         </List>
       </Drawer>
       <main

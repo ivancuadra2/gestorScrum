@@ -1,4 +1,4 @@
-import Navigation from './Drawer';
+import Navigation from './Navigation';
 import React from 'react';
 import firebase from '../config/firebase';
 //import {withRouter} from 'react-router-dom' ;
@@ -18,7 +18,7 @@ function Main(props){
     auth.onAuthStateChanged(function(user) {
         if (!user) {
           
-          history.push('/login2');
+          history.push('/login');
           // User is signed in.
         }else{
             console.log('Nombre de usuario: ', user.displayName);
