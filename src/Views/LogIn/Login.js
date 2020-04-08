@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -58,6 +58,9 @@ function SignUp(props) {
   // Descargo history de withRouter que guarda las rutas almacenadas
   const { history } = props;
   let auth = firebase.auth
+  const [email, setEmail]= useState('')
+  console.log('localStoragEmail' ,localStorage.getItem('emailForSignIn'))
+  
 
   function listenAuth(){
     auth.onAuthStateChanged(function(user) {
@@ -65,19 +68,44 @@ function SignUp(props) {
         console.log('Nombre de usuario: ', user.displayName);
         history.push('/');
         // User is signed in.
-      } else {
-        alert('No estas logeado')
-        // No user is signed in.
       }
     });}
+  
+  var actionCodeSettings = {
+    // URL you want to redirect back to. The domain (www.example.com) for this
+    // URL must be whitelisted in the Firebase Console.
+    url: 'https://gestorscrum.firebaseapp.com',
+    // This must be true.
+    handleCodeInApp: true,
+   
+   // dynamicLinkDomain: 'example.page.link'
+  };
+  
+  function handleChange(event){
+    console.log(event.target.value);
+    setEmail(event.target.value);
+    console.log('email :' , email);
+  }
+   
+  function signInEmail(){
+    console.log('llego al sign in :', email)
+    auth.sendSignInLinkToEmail(email, actionCodeSettings)
+      .then(function() {
+        // The link was successfully sent. Inform the user.
+        // Save the email locally so you don't need to ask the user for it again
+        // if they open the link on the same device.
+        window.localStorage.setItem('emailForSignIn', email);
+      })
+      .catch(function(error) {
+        console.log(error)
+        // Some error occurred, you can inspect the code: error.code
+  });
 
+   
 
-
+  } 
   async function signInGoogle(){
-    let auth = firebase.auth; 
     let googleProvider = firebase.googleProvider;
-
-    
     // Start a sign in process for an unauthenticated user.
     var provider =  googleProvider;
     provider.addScope('profile');
@@ -90,11 +118,6 @@ function SignUp(props) {
 
 listenAuth();
 
-
-
-
-
-  
 
   return (
     <Container component="main" maxWidth="xs">
@@ -118,7 +141,7 @@ listenAuth();
                 id="firstName"
                 label="First Name"
                 autoFocus
-              />
+              />  
             </Grid>
             <Grid item xs={12} sm={6}>
               <TextField
@@ -140,6 +163,7 @@ listenAuth();
                 label="Email Address"
                 name="email"
                 autoComplete="email"
+                onChange={handleChange}
               />
             </Grid>
             <Grid item xs={12}>
@@ -163,17 +187,18 @@ listenAuth();
           </Grid>
           <GoogleButton onClick = {signInGoogle}/>  
           <Button
-            type="submit"
+            onClick = {signInEmail}
+            //type="submit"
             fullWidth
             variant="contained"
             color="primary"
             className={classes.submit}
           >
-            Sign Out
+            Sign In
           </Button>
           <Grid container justify="flex-end">
             <Grid item>
-              <Link href="#" variant="body2">
+              <Link href="lacuerda.net" variant="body2">
                 Already have an account? Sign in
               </Link>
             </Grid>

@@ -84,6 +84,7 @@ const useStyles = makeStyles(theme => ({
 
 async function logOut(props){
   try {
+      localStorage.setItem('emailForSignIn', '')
       await firebase.logout();    
       //localStorage.removeItem('userRole')
       //props.history.replace('/');

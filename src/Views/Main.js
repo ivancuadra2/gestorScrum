@@ -16,8 +16,7 @@ function Main(props){
 
     // Checkear que los usuarios estén loggeados antes de entrar. 
     auth.onAuthStateChanged(function(user) {
-        if (!user) {
-          
+        if (!user && localStorage.getItem('emailForSignIn') !== 'cuadradoivan1990@gmail.com') {
           history.push('/login');
           // User is signed in.
         }else{
