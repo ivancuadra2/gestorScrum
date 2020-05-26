@@ -19,7 +19,9 @@ import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import firebase from '../config/firebase';
 import LockTwoTone from '@material-ui/icons/LockTwoTone'
-//import {withRouter} from 'react-router-dom';
+import logo from './Image/logo2.png';
+import {withRouter} from 'react-router-dom';
+import UserController from '../Controller/UserController';
 
 
 
@@ -28,24 +30,27 @@ const drawerWidth = 240;
 const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
-    secodary : 'red',
+    
   },
+  
   appBar: {
     transition: theme.transitions.create(['margin', 'width'], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
+    background: 'linear-gradient(180deg, #00E7FF, #063DCB)' ,
   },
   appBarShift: {
     width: `calc(100% - ${drawerWidth}px)`,
-    marginLeft: drawerWidth,
+    marginRight: drawerWidth,
     transition: theme.transitions.create(['margin', 'width'], {
       easing: theme.transitions.easing.easeOut,
       duration: theme.transitions.duration.enteringScreen,
     }),
   },
   menuButton: {
-    marginRight: theme.spacing(2),
+    //marginRight: theme.spacing(2),
+    marginLeft : 'auto', 
   },
   hide: {
     display: 'none',
@@ -62,7 +67,7 @@ const useStyles = makeStyles(theme => ({
     alignItems: 'center',
     padding: theme.spacing(0, 1),
     ...theme.mixins.toolbar,
-    justifyContent: 'flex-end',
+    justifyContent: 'flex-start',
   },
   content: {
     flexGrow: 1,
@@ -71,14 +76,14 @@ const useStyles = makeStyles(theme => ({
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
-    marginLeft: -drawerWidth,
+    marginRight: -drawerWidth,// Antes era un MarginLeft y este depende del tamño del drawer
   },
   contentShift: {
     transition: theme.transitions.create('margin', {
       easing: theme.transitions.easing.easeOut,
       duration: theme.transitions.duration.enteringScreen,
     }),
-    marginLeft: 0,
+    marginRight: 0, // Antes era un MarginLeft
   },
 }));
 
@@ -93,11 +98,16 @@ async function logOut(props){
   }
 }
 
-export default function Navigation() {
+function Navigation(props) {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
+  const {history} = props ;
 
+  const handleOnSubmit = () => {
+    console.log('Estoy dentro de submit');
+    history.push(`/dashboard`);
+    };
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -110,59 +120,28 @@ export default function Navigation() {
     <div className={classes.root}>
       <CssBaseline />
       <AppBar
+        background = 'dark'
         position="fixed"
+        className= {classes.toolbar}
         className={clsx(classes.appBar, {
           [classes.appBarShift]: open,
         })}
       >
         <Toolbar>
+          <img src = {logo} width ='180px' alignItems= 'center'/>
+          
           <IconButton
             color="inherit"
             aria-label="open drawer"
             onClick={handleDrawerOpen}
-            edge="start"
+            edge= "end"
             className={clsx(classes.menuButton, open && classes.hide)}
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6"  align = 'center'>
-            Scrum Game
-          </Typography>
         </Toolbar>
       </AppBar>
-      <Drawer
-        className={classes.drawer}
-        variant="persistent"
-        anchor="left"
-        open={open}
-        classes={{
-          paper: classes.drawerPaper,
-        }}
-      >
-        <div className={classes.drawerHeader}>
-          <IconButton onClick={handleDrawerClose}>
-            {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-          </IconButton>
-        </div>
-        <Divider />
-        <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
-        <Divider />
-        <List>
-          
-            <ListItem onClick = {logOut} button key={'Cerrar Sesion'}>
-              <ListItemIcon ><LockTwoTone /> </ListItemIcon>
-              <ListItemText primary={'Cerrar Sesion'} />
-            </ListItem>
-        
-        </List>
-      </Drawer>
+      
       <main
         className={clsx(classes.content, {
           [classes.contentShift]: open,
@@ -193,6 +172,46 @@ export default function Navigation() {
           accumsan lacus vel facilisis. Nulla posuere sollicitudin aliquam ultrices sagittis orci a.
         </Typography>
       </main>
+      <Drawer //Al ponerlo después del main cambia la forma en que se abre
+        className={classes.drawer}
+        variant="persistent"
+        anchor="right" // anteriormente estaba en el left
+        open={open}
+        classes={{
+          paper: classes.drawerPaper,
+        }}
+      >
+        <div className={classes.drawerHeader}>
+          <IconButton onClick={handleDrawerClose}>
+            {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+          </IconButton>
+        </div>
+        <Divider />
+        <List>
+          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+            <ListItem button key={text} onClick = {() => {history.push("/ScrumPromo")}}>
+              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItem>
+          ))}
+        </List>
+        <Divider />
+        <List>
+          
+            <ListItem onClick = {logOut} button key={'Cerrar Sesion'}>
+              <ListItemIcon ><LockTwoTone /> </ListItemIcon>
+              <ListItemText primary={'Cerrar Sesion'} />
+            </ListItem>
+
+            <ListItem onClick = {() => {UserController.getAllUsers()}} button key={'Cerrar Sesion'}>
+              <ListItemIcon ><LockTwoTone /> </ListItemIcon>
+              <ListItemText primary={'Traer Usuarios'} />
+            </ListItem>
+        
+        </List>
+      </Drawer>
     </div>
   );
 }
+
+export default withRouter(Navigation)

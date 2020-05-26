@@ -19,7 +19,6 @@ async function HolaRepo(){
             });
         });
         
-        //console.log(holaDatabase);
         
 
     } catch (error) {

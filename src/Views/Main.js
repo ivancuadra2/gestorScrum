@@ -1,7 +1,7 @@
 import Navigation from './Navigation';
 import React from 'react';
 import firebase from '../config/firebase';
-//import {withRouter} from 'react-router-dom' ;
+
 
 
 
@@ -26,7 +26,11 @@ function Main(props){
     
 
     return(
-        <Navigation/>
+        <React.Fragment>
+
+          <Navigation/>  
+        </React.Fragment>
+        
     );
 };
 

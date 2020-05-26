@@ -1,0 +1,55 @@
+.title {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    padding: 50px 0px;
+}
+
+.title input{
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 1.4em;
+    font-weight: bold;
+    width: 100%;
+}
+
+.textarea{
+    width: 100%;
+    font-size: 1.3em;
+    height: 100%;
+}
+
+.displayFlex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.displayColumn {
+    width: 40%;
+}
+
+.displayColumn > h3{
+    font-size: 1.5em;
+}
+
+.imgScrum {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 25px;
+}
+
+@media (max-width: 1000px){
+    .displayColumn {
+        width: 100%;
+    }
+    
+}
+
+

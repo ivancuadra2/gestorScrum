@@ -1,0 +1,12 @@
+.content-section-news{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+.content-news{
+    width:100%;
+    display: flex;
+    flex-wrap: wrap;
+}

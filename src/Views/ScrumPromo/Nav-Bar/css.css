@@ -1,0 +1,29 @@
+.content-nav{    
+    background: linear-gradient(90deg, #ab31d4 0%, hsl(338, 78%, 48%) 100%);
+    
+    width: 100%;
+    position: fixed;
+    top:0;
+    display:flex;
+    color:#fff;
+    padding-top: 8px;
+    z-index: 2;
+    transition: ease-in 0.3s;
+}
+
+.invisible{
+    display: none;
+}
+
+.nav{
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+    width: 200px;
+    font-weight: bold;
+    font-size: 2em;
+}
