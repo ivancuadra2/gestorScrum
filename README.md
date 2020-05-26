@@ -1,6 +1,8 @@
 Prerrequisitos para trabajar aplicacion:
 
 -node v 12.14.1 (es la que yo estoy utilizando) https://nodejs.org/es/download/ 
+
+
 -git https://git-scm.com/download/wins
 
 clonar el repositorio https://github.com/locuracausal/gestorScrum.git
