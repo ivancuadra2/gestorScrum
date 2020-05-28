@@ -15,6 +15,8 @@ import Container from '@material-ui/core/Container';
 import GoogleButton from 'react-google-button';
 import firebase from '../../config/firebase';
 import { withRouter } from "react-router-dom";
+import AdminController from '../../Controller/AdminController';
+
 
 function Copyright() {
   return (
@@ -59,14 +61,25 @@ function SignUp(props) {
   const { history } = props;
   let auth = firebase.auth
   const [email, setEmail]= useState('')
-  console.log('localStoragEmail' ,localStorage.getItem('emailForSignIn'))
+  //console.log('localStoragEmail' ,localStorage.getItem('emailForSignIn'))
   
 
   function listenAuth(){
     auth.onAuthStateChanged(function(user) {
       if (user) {
         console.log('Nombre de usuario: ', user.displayName);
-        history.push('/');
+        let email = user.email;
+        AdminController.getAdminByEmail(email).then(value => {
+          console.log(value);
+          if(value){history.push('/Main')}
+          else{alert('No tiene permiso comuniquese con el administrador')}
+            
+          
+               //if(value){history.push('/')}
+              // else{console.Alert('No tienes permiso comunicate con el administrador')}
+          })
+        
+        
         // User is signed in.
       }
     });}

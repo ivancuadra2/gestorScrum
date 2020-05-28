@@ -1,6 +1,7 @@
 import Navigation from './Navigation';
 import React from 'react';
 import firebase from '../config/firebase';
+import AdminController from '../Controller/AdminController';
 
 
 
@@ -13,15 +14,23 @@ function Main(props){
 
     const auth = firebase.auth;
     const {history} = props;
+    
 
     // Checkear que los usuarios estén loggeados antes de entrar. 
-    auth.onAuthStateChanged(function(user) {
-        if (!user && localStorage.getItem('emailForSignIn') !== 'cuadradoivan1990@gmail.com') {
+    auth.onAuthStateChanged( user => {
+        if (!user ) {
+          console.log(user);
           history.push('/login');
           // User is signed in.
         }else{
-            console.log('Nombre de usuario: ', user.displayName);
-        }
+          let email = user.email ;
+          console.log('Nombre de usuario: ',email);
+          AdminController.getAdminByEmail(email).then(value => {
+                console.log(value);
+                     if(!value){history.push('/login')}
+                     else{console.log('Eres admin')}
+                })
+        } 
       });
     
 

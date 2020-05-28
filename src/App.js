@@ -18,9 +18,9 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Route path="/login" component={SignUp} exact/>
-      <Route path = "/" component= {Main} exact/>
-      <Route path = "/ScrumPromo" component= {promoScrum} exact/>
+      <Route path="/Login" component={SignUp} exact/>
+      <Route path = "/Main" component= {Main} exact/>
+      <Route path = "/" component= {promoScrum} exact/>
     </BrowserRouter>
     
     

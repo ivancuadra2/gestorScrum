@@ -34,7 +34,7 @@ export default function Nav() {
                 data-aos-duration="1000">
                 <div className="content-width nav">
                     <img className="logo" src={logo} alt="SCRUM Game" />
-                    <Buttons classButtons={classButtons}/>
+                    <Buttons classButtons={classButtons} />
                     <Burger onClickBurger={onClickBurger} />
                 </div>
             </div>

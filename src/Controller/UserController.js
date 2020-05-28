@@ -16,13 +16,11 @@ class UserController extends Component {
             let users = await UserRepo.getUsersId();
 
             if (users) {
-                
                 return users;
             } else {
                 console.log("No se pudo obtener el listado de usuarios");
                 return false;
             }
-
         } catch (error) {
             console.log("Error", error)
             //throw new Error();
