@@ -104,10 +104,10 @@ function Navigation(props) {
   const [open, setOpen] = React.useState(false);
   const {history} = props ;
 
-  const handleOnSubmit = () => {
+  /* const handleOnSubmit = () => {
     console.log('Estoy dentro de submit');
     history.push(`/dashboard`);
-    };
+    }; */
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -121,14 +121,14 @@ function Navigation(props) {
       <CssBaseline />
       <AppBar
         background = 'dark'
-        position="fixed"
-        className= {classes.toolbar}
+        position="fixed"/* 
+        className= {classes.toolbar} */
         className={clsx(classes.appBar, {
           [classes.appBarShift]: open,
         })}
       >
         <Toolbar>
-          <img src = {logo} width ='180px' alignItems= 'center'/>
+          <img src = {logo} alt="logo" width ='180px' alignItems= 'center'/>
           
           <IconButton
             color="inherit"
