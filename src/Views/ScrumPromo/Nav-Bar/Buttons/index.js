@@ -10,7 +10,7 @@ function Buttons(props) {
     return (
         <div className={"buttons " + props.classButtons}>
             <button className="button transparent button-signup">REGISTRARSE</button>
-            <button className="button white button-login"  onClick = {  history.push('/Login')}>INICIAR SESIÓN</button>
+            <button className="button white button-login"  onClick = {() =>  history.push('/Login')}>INICIAR SESIÓN</button>
         </div>
     )
 }
