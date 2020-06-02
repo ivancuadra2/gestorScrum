@@ -1,14 +1,11 @@
-import Navigation from './Navigation';
+import Navigation from '../Navigation';
 import React from 'react';
-import firebase from '../config/firebase';
-import AdminController from '../Controller/AdminController';
-
-
-
+import firebase from '../../config/firebase';
+import AdminController from 'Controller/AdminController';
+import Table from './Table/table';
+import './main.css';
 
 console.log('email: ' , firebase.getCurrentUsername());
-
-
 
 function Main(props){
 
@@ -18,7 +15,7 @@ function Main(props){
 
     // Checkear que los usuarios estén loggeados antes de entrar. 
     auth.onAuthStateChanged( user => {
-        if (!user ) {
+        if (!user) {
           console.log(user);
           history.push('/login');
           // User is signed in.
@@ -35,10 +32,10 @@ function Main(props){
     
 
     return(
-        <React.Fragment>
-
+        <div className="content-admin-main">
           <Navigation/>  
-        </React.Fragment>
+          <Table />
+        </div>
         
     );
 };
