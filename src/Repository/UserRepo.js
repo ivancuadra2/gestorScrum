@@ -14,10 +14,16 @@ class UserRepo extends Component {
         }
     }
 
-    getUsersId = async () => {// 
+    getUsers = async () => {// 
         try {
             let coleccion = await firebase.db.collection(collection).get();
-            let usuarios = coleccion.docs.map(doc => doc.id);
+            let usuarios = [] ;
+            coleccion.forEach(function(doc) {
+                // doc.data() is never undefined for query doc snapshots
+                usuarios.push(doc.data())
+                
+               // console.log(doc.id, " => ", doc.data());
+            });
             console.log("usuarios", usuarios)
             return usuarios;
         } catch (error) {
@@ -25,6 +31,18 @@ class UserRepo extends Component {
             throw new Error();
         }
     };
+
+    // db.collection("cities").where("capital", "==", true)
+    // .get()
+    // .then(function(querySnapshot) {
+    //     querySnapshot.forEach(function(doc) {
+    //         // doc.data() is never undefined for query doc snapshots
+    //         console.log(doc.id, " => ", doc.data());
+    //     });
+    // })
+    // .catch(function(error) {
+    //     console.log("Error getting documents: ", error);
+    // });
 
     
 

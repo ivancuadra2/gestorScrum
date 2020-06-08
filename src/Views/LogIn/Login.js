@@ -65,11 +65,11 @@ function SignUp(props) {
   
 
   function listenAuth(){
-    auth.onAuthStateChanged(function(user) {
+    auth.onAuthStateChanged(function(user) { // funcion que provee firebase para chekear que estes loggeado
       if (user) {
         console.log('Nombre de usuario: ', user.displayName);
-        let email = user.email;
-        AdminController.getAdminByEmail(email).then(value => {
+        let email = user.email;// Me traigo el mail de quien pretende entrar
+        AdminController.getAdminByEmail(email).then(value => { // si lo encuentro en la base de datos redirijo al Main
           console.log(value);
           if(value){history.push('/Main')}
           else{alert('No tiene permiso comuniquese con el administrador')}

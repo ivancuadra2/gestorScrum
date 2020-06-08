@@ -103,11 +103,18 @@ function Navigation(props) {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
   const {history} = props ;
+  let users ;
 
   const handleOnSubmit = () => {
     console.log('Estoy dentro de submit');
     history.push(`/dashboard`);
     };
+
+  async function handleGetUsers(e){
+    users = await UserController.getAllUsers();
+    console.log(users);
+
+  }  
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -203,7 +210,7 @@ function Navigation(props) {
               <ListItemText primary={'Cerrar Sesion'} />
             </ListItem>
 
-            <ListItem onClick = {() => {UserController.getAllUsers()}} button key={'Cerrar Sesion'}>
+            <ListItem onClick = {() => { handleGetUsers() }} button key={'Traer Usuarios'}>
               <ListItemIcon ><LockTwoTone /> </ListItemIcon>
               <ListItemText primary={'Traer Usuarios'} />
             </ListItem>

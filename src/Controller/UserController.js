@@ -13,7 +13,7 @@ class UserController extends Component {
 
     getAllUsers = async () => {
         try {
-            let users = await UserRepo.getUsersId();
+            let users = await UserRepo.getUsers();
 
             if (users) {
                 return users;
@@ -26,6 +26,9 @@ class UserController extends Component {
             //throw new Error();
         }
     }
+
+
+    
 
 }
    
