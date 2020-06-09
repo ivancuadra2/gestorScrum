@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css'; 
 import { BrowserRouter, Route  } from "react-router-dom";
 //import SignIn from './Views/LogIn/LogIn2';
-import SignUp from './Views/LogIn/Login';
+import SignUp from './Views/LogIn';
 import Main from './Views/Main/Main';
 import promoScrum from './Views/ScrumPromo/App';
 

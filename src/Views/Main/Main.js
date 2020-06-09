@@ -5,7 +5,7 @@ import AdminController from 'Controller/AdminController';
 import Table from './Table/table';
 import './main.css';
 
-console.log('email: ' , firebase.getCurrentUsername());
+/* console.log('email: ' , firebase.getCurrentUsername()); */
 
 function Main(props){
 

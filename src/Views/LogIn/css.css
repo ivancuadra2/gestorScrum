@@ -1,0 +1,89 @@
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+    text-align: center;
+    width: 100vw;
+    min-height: 100vh !important;
+  }
+
+  .title-form{
+      font-weight: bold;
+      font-size: 3em;
+      margin-bottom: 20px;
+      width: 100%;
+      text-align: center;
+  }
+
+  .form-login {
+    width: 100vw;
+    max-width: 380px;
+    margin: auto;
+    padding-right: 45px;
+    padding-left: 45px;
+    text-align: center;
+    background-color: #FAFAFA;
+    box-shadow: 0 0 20px rgba(116, 14, 90, 1);
+    box-sizing: border-box;
+  }
+
+  .form-login .logo-login{
+    max-width: 175px;
+    max-height: 30vh;
+    margin: 2% 0;
+  }
+
+  .form-login input {
+    outline: 0;
+    background: #FAFAFA;
+    width: 100%;
+    border: 1px solid rgba(219,219,219,1);
+    margin: 0 0 15px;
+    padding: 9px 8px 7px 9px;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+
+  .form-login .button{
+    width: 100%;
+    margin: 0 !important;
+  }
+
+  .form-login .divisor-login{
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    color: rgba(0, 0, 0, .5);
+    margin: 16px 0;
+  }
+
+  .form-login .divisor-login hr{
+    width: 30%;
+    background-color: none;
+    border: 0.1px solid rgba(0, 0, 0, .1)
+  }
+
+  .form-login .login-google{
+    font-size: 0.8em;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+
+  
+  .form-login .error{
+    font-size: 0.7em;
+    color: #ED4956;
+    margin-bottom: 16px;
+  }
+
+  .form-login .no-account{
+    font-size: 0.8em;
+    color: #00376B;
+    margin-bottom: 16px;
+  }
+
+  .w100{
+    width: 100%;
+  }

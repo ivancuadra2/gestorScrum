@@ -88,6 +88,7 @@ p{
   transition: all ease 0.5s;
 }
 
+
 *::selection{
   background-color: #921bb9;
   color: #fff;
@@ -106,7 +107,7 @@ p{
 }
  
 
-.button:hover, .button.transparent:hover {
+.button:hover, .button.transparent:hover, .button.violet {
   color:#fff;
   border-color: #921bb9;
   background: #5c1175;
@@ -119,3 +120,7 @@ p{
   border-width: 1px 1px 4px;
 }
 
+.button.violet:hover{
+  background:#921bb9 ;
+  border-color: #5c1175;
+}
