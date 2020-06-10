@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import firebase from '../config/firebase';
-import { createPalette } from '@material-ui/core';
+/* import { createPalette } from '@material-ui/core'; */
 const collection = 'Admin';
 
 class AdminRepo extends Component {
@@ -25,10 +25,6 @@ class AdminRepo extends Component {
             throw new Error();
         }
     };
-    
-
-
-
 
     getExistsAdmin = async function (email) {      // Buscamos el admin por ID para verificar que esté en la base de datos
         console.log("Llegue al repo de admin con el email", email);

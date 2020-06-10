@@ -1,38 +1,121 @@
-.App {
-  text-align: center;
+html, body{
+  font-family: 'Baloo Thambi 2', cursive;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+input, textarea{
+  font-family: 'Baloo Thambi 2', cursive;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.content-width{
+  width: 90vw;
+  max-width: 1065px;
+  margin: 0 auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.content-section{
+  min-height: 80vh;
   display: flex;
-  flex-direction: column;
+  justify-items: center;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+a{
+  text-decoration: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+h2{
+  font-size: 2.5em;
+  margin:20px 0;
+}
+
+p{
+  font-size: 1.4em;
+}
+
+@media(max-width:600px){
+  h2{
+    font-size: 2em;
   }
-  to {
-    transform: rotate(360deg);
+  p{
+    font-size: 1em;
   }
 }
+
+.button{
+  font-family: 'Baloo Thambi 2', cursive;
+  border: 1px solid #000;
+  border-width: 0 0 4px;
+  border-radius: 16px;
+  font-weight: bold;
+  padding: 10px;
+  font-size: 1.1em;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  transition: all 0.5s ease;
+}
+
+.button.blue{
+  color: #fff;
+  border-color: rgb(14, 64, 117);
+  background: linear-gradient(90deg, #1F76D1 0%, #2d9ceb 100%);
+}
+
+.button.blue::before {
+  content: "";
+  position: absolute;
+  border-radius: 16px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #2d9ceb 60%, #1F76D1 100%);
+  opacity: 0;
+  transition: opacity 0.4s;
+  z-index: -1;
+}
+.button:hover::before {
+  opacity: 1;
+}
+
+.button.white{
+  color: #5c1175;
+  border-color: #5c1175;
+  background-color: #fff;
+  transition: all ease 0.5s;
+}
+
+*::selection{
+  background-color: #921bb9;
+  color: #fff;
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #921bb9;
+}
+
+*::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+ 
+
+.button:hover, .button.transparent:hover {
+  color:#fff;
+  border-color: #921bb9;
+  background: #5c1175;
+}
+
+.button.transparent{
+  background:transparent;
+  border-color: #5c1175;
+  color: #fff;
+  border-width: 1px 1px 4px;
+}
+

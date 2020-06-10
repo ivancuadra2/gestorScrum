@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import  UserRepo from '../Repository/UserRepo';
+/* import  UserRepo from '../Repository/UserRepo'; */
 import AdminRepo from '../Repository/AdminRepo';
 
 

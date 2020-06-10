@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import firebase from '../config/firebase';
-import { createPalette } from '@material-ui/core';
+/* import { createPalette } from '@material-ui/core'; */
 const collection = 'users';
 
 class UserRepo extends Component {
