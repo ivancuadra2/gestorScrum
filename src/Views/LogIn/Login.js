@@ -73,13 +73,9 @@ function SignUp(props) {
           console.log(value);
           if(value){history.push('/Main')}
           else{alert('No tiene permiso comuniquese con el administrador')}
-            
-          
                //if(value){history.push('/')}
               // else{console.Alert('No tienes permiso comunicate con el administrador')}
           })
-        
-        
         // User is signed in.
       }
     });}
