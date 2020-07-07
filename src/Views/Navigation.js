@@ -105,10 +105,9 @@ function Navigation(props) {
   const {history} = props ;
   let users ;
 
-  /* const handleOnSubmit = () => {
+   const handleOnSubmit = () => {
     console.log('Estoy dentro de submit');
     history.push(`/dashboard`);
-<<<<<<< HEAD
     };
 
   async function handleGetUsers(e){
@@ -116,9 +115,6 @@ function Navigation(props) {
     console.log(users);
 
   }  
-=======
-    }; */
->>>>>>> 2d7e86b0bba38fe847d4e98f102c4933ef19e341
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -132,8 +128,8 @@ function Navigation(props) {
       <CssBaseline />
       <AppBar
         background = 'dark'
-        position="fixed"/* 
-        className= {classes.toolbar} */
+        position="fixed"
+        className= {classes.toolbar} 
         className={clsx(classes.appBar, {
           [classes.appBarShift]: open,
         })}

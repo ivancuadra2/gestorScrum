@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import './css.css';
 import img from './scrum3.png'
 import { scroller } from 'react-scroll';
+import Storage from '../../../Repository/Storage';
 
 const scrollType = {
     duration: 1000,
@@ -65,7 +66,7 @@ export default function Header(props) {
                         }
                         <div className="content-buttons-header">
                             <button className="button white button-header" onClick={onClickWhatItIs}>¿QUE ES SCRUM GAME?</button>
-                            <button className="button transparent button-header-login">COMENZAR A JUGAR</button>
+                            <button className="button transparent button-header-login" onClick = {() => Storage.getScrumGame()}>COMENZAR A JUGAR</button>
                         </div>
                     </div>
                 </div>

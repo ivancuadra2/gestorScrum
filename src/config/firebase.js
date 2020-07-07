@@ -1,7 +1,8 @@
     
 //import { firebaseConfig } from './firebase-config';
 import app from 'firebase/app';
-//import 'firebase/auth';
+import 'firebase/auth';
+import 'firebase/storage';
 //import 'firebase/firebase-firestore';
 //import 'firebase-admin';
 const firebaseConfig = {
@@ -24,8 +25,12 @@ class Firebase {
         this.db = firebase.firestore();
         this.googleProvider = new app.auth.GoogleAuthProvider();
         //this.admin = require("firebase-admin");
+        this.storage = app.storage()
        // this.userValidated = null;
     }
+
+    
+
 
     signOut = () => console.log('llegue a sign out') ;//this.auth.signOut();
 
@@ -33,6 +38,8 @@ class Firebase {
         console.log('logout :' ,  this.auth.signOut())
         return await this.auth.signOut();
     }
+
+    
        
 
     getCurrentUsername() {
