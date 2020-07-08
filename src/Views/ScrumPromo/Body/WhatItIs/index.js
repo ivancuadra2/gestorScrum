@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 import './css.css';
-// import img from './scrumImage.png'
 import { Element } from 'react-scroll';
 
 export default function WhatIsIt({edit, title, subtitle, subtitle2, text, text2}) {

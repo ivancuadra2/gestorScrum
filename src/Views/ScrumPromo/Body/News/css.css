@@ -3,10 +3,17 @@
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
+    padding:10px;
+    /* background: rgb(247, 247, 247); */
+    background: rgba(255, 228, 245, 0.212);
+   
 }
 
 .content-news{
     width:100%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
 }
+

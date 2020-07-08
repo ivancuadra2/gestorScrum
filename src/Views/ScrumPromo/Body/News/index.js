@@ -13,36 +13,36 @@ export default function News(props) {
             <div className="content-news">
               <New 
                   edit={props.edit} 
-                  title="El primer modal AA PRUEBA TEXTO MUY LARGO LOREM LOREM" 
+                  title="Ultimo Momento SCRUM GAME avanza en su desarrollo" 
                   text="Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas 'Letraset', las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas 'Letraset', las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas"/>
               <New 
                   edit={props.edit}
-                  title="el segundo modal" 
+                  title="Entrevistas realizadas a usuarios de todo el mundo" 
                   text="Modal 2 texto"/>
               <New 
                   edit={props.edit}
-                  title="El tercer modal" 
+                  title="Cambio de diseño en la página web" 
                   text="Hola"/>
               <New 
                   edit={props.edit}
-                  title="el cuarto modal" 
+                  title="Calificaciones de expertos se hacen públicas" 
                   text="Cuarto modal"/>
               <New 
                   edit={props.edit}
-                  title="El QUINTO modal" 
+                  title="Se conoce el porcentaje de interesados en la nueva aplicación en desarrollo" 
                   text="QUINTO"/>
               <New 
                   edit={props.edit}
-                  title="el SEXTO modal" 
+                  title="Las descargas de ScrumGameApp son mayores en Iphone que en Android" 
                   text="SEXTO modal"/>
               <New 
                   edit={props.edit}
-                  title="El SEPTIMO modal" 
+                  title="Primeros pasos" 
                   text="SEPTIMO"/>
               <New 
                   edit={props.edit}
-                  title="el OCTAVO modal" 
-                  text="OCTAVO modal"/>
+                  title="Opiniones de usuarios" 
+                  text="El desarrollo "/>
             </div>
     </div>
   )

@@ -2,6 +2,7 @@ html, body{
   font-family: 'Baloo Thambi 2', cursive;
   padding: 0;
   margin: 0;
+  text-decoration: none;
   overflow-x: hidden;
 }
 
