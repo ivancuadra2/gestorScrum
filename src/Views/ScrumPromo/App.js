@@ -6,7 +6,6 @@ import Footer from './Footer';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 import './icons.css';
-import  Storage from '../../Repository/Storage'
 
 
 
