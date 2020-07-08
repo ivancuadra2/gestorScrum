@@ -133,8 +133,8 @@ export default function Us(props) {
         />
         <Circle
           img={imgAna}
-          name="Juan Agustín Martí"
-          position="Ana Martinez Saucedo"
+          name="Ana Martinez Saucedo"
+          position=""
           social={[
             {
               id: 0,
