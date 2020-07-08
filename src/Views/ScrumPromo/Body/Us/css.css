@@ -4,9 +4,10 @@
     justify-content: space-around;
 }
 .content-members{
+    margin-top: 50px;
     width: 100%;
     display: flex;
-    align-content: space-around;
-    justify-content: space-around;
+    align-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
 }

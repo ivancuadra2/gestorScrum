@@ -1,10 +1,13 @@
 .new-title{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
     cursor: pointer;
     width: 45%;
-    border: 1px solid #ccc;
-    margin:0;
+    /* border: 1px solid #ccc; */
+    margin-top:15px;
     padding:5px;
-    overflow:auto;
+    /* overflow:auto; */
     max-height:1.7em;
     font-weight: normal;
 }
@@ -44,6 +47,7 @@
 }
 
 .modal-title{
+    position: relative;
     max-height: 1.7em;
     overflow:auto;
 }
@@ -53,6 +57,7 @@
     width: 80%;
     margin: auto;
     overflow: auto;
+    
 }
 
 .modal-close{
