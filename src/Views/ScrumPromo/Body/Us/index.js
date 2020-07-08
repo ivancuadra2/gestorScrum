@@ -3,6 +3,8 @@ import Circle from "./Circle";
 import "./css.css";
 import img from "./1.jpg";
 import imgGuillermo from "./guillermo.jpg";
+import imgNicolas from "./nico.jpg";
+import imgAna from "./ana.jpg";
 
 export default function Us(props) {
   return (
@@ -84,7 +86,7 @@ export default function Us(props) {
           edit={props.edit}
         />
         <Circle
-          img="https://www.webcampus.uade.edu.ar/Fotos/1/ID_993091.jpg"
+          img={imgNicolas}
           name="Nicolas Gladkoff"
           position=""
           social={[
@@ -130,9 +132,9 @@ export default function Us(props) {
           edit={props.edit}
         />
         <Circle
-          img={img}
+          img={imgAna}
           name="Juan Agustín Martí"
-          position="Desarrollo web"
+          position="Ana Martinez Saucedo"
           social={[
             {
               id: 0,
