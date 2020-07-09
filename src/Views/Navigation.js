@@ -105,11 +105,6 @@ function Navigation(props) {
   const {history} = props ;
   let users ;
 
-   const handleOnSubmit = () => {
-    console.log('Estoy dentro de submit');
-    history.push(`/dashboard`);
-    };
-
   async function handleGetUsers(e){
     users = await UserController.getAllUsers();
     console.log(users);
@@ -130,12 +125,9 @@ function Navigation(props) {
         background = 'dark'
         position="fixed"
         className= {classes.toolbar} 
-        className={clsx(classes.appBar, {
-          [classes.appBarShift]: open,
-        })}
       >
         <Toolbar>
-          <img src = {logo} alt="logo" width ='180px' alignItems= 'center'/>
+          <img src={logo} alt="logo" width ='180px' alignItems='center'/>
           
           <IconButton
             color="inherit"

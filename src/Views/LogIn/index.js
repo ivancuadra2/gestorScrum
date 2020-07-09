@@ -62,7 +62,6 @@ export default function LogIn(props) {
 
   const handleLogIn = () => {
     let email = firebase.getCurrentEmail();
-    console.log(email);
     if(email){
       handleSetLoading(true);
       if (isAdmin) {
