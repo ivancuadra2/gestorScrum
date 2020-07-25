@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./css.css";
-import AppStore from "./AppStore";
+// import AppStore from "./AppStore";
 import PlayStore from "./PlayStore";
 import img from "./img.png";
 
@@ -50,7 +50,7 @@ export default function Stores({ edit, title, text }) {
             className="textarea"
           />
 
-          <AppStore />
+           {/* <AppStore /> */}
           <PlayStore />
         </div>
         <img src={img} alt="IOS y ANDROID" className="phones" />
@@ -67,7 +67,7 @@ export default function Stores({ edit, title, text }) {
         <div className="content-description">
           <h2>{title}</h2>
           <p>{text}</p>
-          <AppStore />
+          {/* <AppStore /> */}
           <PlayStore />
         </div>
         <img src={img} alt="IOS y ANDROID" className="phones" />
