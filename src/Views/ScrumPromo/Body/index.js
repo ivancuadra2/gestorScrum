@@ -2,7 +2,7 @@ import React from 'react';
 import WhatItIs from './WhatItIs';
 import Stores from './Stores';
 import Us from './Us';
-import News from './News';
+/* import News from './News'; */
 
 export default function Body(props) {
     return (
@@ -11,9 +11,9 @@ export default function Body(props) {
                 edit={props.edit} 
                 title='¿Qué es Scrum Game?'
                 subtitle='Aprende de forma inteligente'
-                text='Lorem ipsum odor amet, consectetuer adipiscing elit. Ac purus in massa egestas mollis varius; dignissim elementum. Mollis tincidunt mattis hendrerit dolor eros enim, nisi ligula ornare.'
-                subtitle2='Súper intuitivo y eficaz'
-                text2='Lorem ipsum odor amet, consectetuer adipiscing elit. Ac purus in massa egestas mollis varius; dignissim elementum. Mollis tincidunt mattis hendrerit dolor eros enim, nisi ligula ornare..'
+                text='Scrum game es un juego serio cuyo objetivo es introducir a estudiantes de informática y desarrolladores de software en scrum. El juego está desarrollado para plataformas Android.'
+                subtitle2='Los videojuegos como una aproximación al Serious gaming.'
+                text2='Proyecto de investigación acreditado y aprobado por UADE'
                 />
             <Stores 
                 edit={props.edit}
@@ -22,11 +22,10 @@ export default function Body(props) {
             />
             <Us 
                 edit={props.edit} 
-
                 />
-            <News 
+            {/* <News 
                 edit={props.edit}
-            />
+            /> */}
         </div>
     )
 }

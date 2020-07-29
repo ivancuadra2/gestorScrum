@@ -5,7 +5,6 @@ import {withRouter} from 'react-router';
 function Buttons(props) {
     
     const { history } = props ;
-    
 
     return (
         <div className={"buttons " + props.classButtons}>

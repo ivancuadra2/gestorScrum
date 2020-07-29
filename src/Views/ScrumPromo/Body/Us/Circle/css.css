@@ -50,6 +50,8 @@
 .img-member{
     border-radius: 50%;
     width: 150px;
+    height: 155px;
+    object-fit: cover;
     transition: all ease 0.5s;
     filter: grayscale(50%);
     box-shadow: 0 0 30px #412437;
@@ -57,6 +59,8 @@
 
 .img-member:hover{
     width: 160px;
+    height: 165px;
+    object-fit: cover;
     cursor: pointer;
 }
 
@@ -78,15 +82,12 @@
     width: 30%;
     height: 100%;
 }
-
 .social{
     width: 100%;
     display: flex;
     justify-content: space-around;
     margin-top: 2px;
 }
-
-
 .social-item{
     margin:0;
     padding:0;
@@ -106,12 +107,16 @@
 
 .circle.show .img-member{    
     width: 200px;
+    height: 205px;
+    object-fit: cover;
     filter: none;
     box-shadow: 0 0 20px #960b68;
 }
 
 .circle.show .img-member:hover{
     width: 200px;
+    height: 205px;
+    object-fit: cover;
 }
 
 @media(max-width:600px){
@@ -123,9 +128,13 @@
     }
     .img-member{
         width: 100px;
+        height: 105px;
+    object-fit: cover;
     }
     .img-member:hover{
         width: 100px;
+        height: 105px;
+    object-fit: cover;
     }
     .name{
         margin: 0;
@@ -139,11 +148,15 @@
     }
     .circle.show .img-member{    
         width: 120px;
+        height: 125px;
+    object-fit: cover;
         -webkit-filter: none;
         filter: none;
     }
     .circle.show .img-member:hover{
         width: 120px;
+        height: 125px;
+    object-fit: cover;
     }
 }
 
@@ -156,9 +169,13 @@
     }
     .img-member{
         width: 80px;
+        height: 85px;
+    object-fit: cover;
     }
     .img-member:hover{
         width: 80px;
+        height: 85px;
+    object-fit: cover;
     }
     .name{
         font-size: 1em;
@@ -175,8 +192,12 @@
     }
     .circle.show .img-member{    
         width: 100px;
+        height: 105px;
+    object-fit: cover;
     }
     .circle.show .img-member:hover{
         width: 100px;
+        height: 105px;
+    object-fit: cover;
     }
 }

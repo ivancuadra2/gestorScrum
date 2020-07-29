@@ -3,6 +3,9 @@ import Circle from "./Circle";
 import "./css.css";
 import img from "./1.jpg";
 import imgGuillermo from "./guillermo.jpg";
+import imgNicolas from "./nico.jpg";
+import imgAna from "./ana.jpg";
+import noImg from './no-img.jpg';
 
 export default function Us(props) {
   return (
@@ -17,162 +20,57 @@ export default function Us(props) {
         <Circle
           img={imgGuillermo}
           name="Guillermo Rodriguez"
-          position="CEO"
-          social={[
-            {
-              id: 0,
-              red: "twitter",
-              url: "https://www.facebook.com/pupimarti",
-            },
-            {
-              id: 1,
-              red: "github",
-              url: "https://www.instagram.com/pupi_marti",
-            },
-            {
-              id: 2,
-              red: "whatsapp",
-              url: "https://www.linkedin.com/in/pupimarti",
-            },
-          ]}
+          position="Director del Proyecto"
+          social={[]}
           edit={props.edit}
         />
         <Circle
           img={img}
           name="Juan Agustin Martí"
           position="Desarrollo web"
-          social={[
-            {
-              id: 0,
-              red: "facebook",
-              url: "https://www.facebook.com/pupimarti",
-            },
-            {
-              id: 1,
-              red: "instagram",
-              url: "https://www.instagram.com/pupi_marti",
-            },
-            {
-              id: 2,
-              red: "linkedin",
-              url: "https://www.linkedin.com/in/pupimarti",
-            },
-          ]}
+          social={[]}
           edit={props.edit}
         />
         <Circle
           img="https://www.webcampus.uade.edu.ar/Fotos/1/ID_993091.jpg"
           name="Octavio Amietta"
           position="Desarrollo web"
-          social={[
-            {
-              id: 0,
-              red: "linkedin",
-              url: "https://www.facebook.com/pupimarti",
-            },
-            {
-              id: 1,
-              red: "instagram",
-              url: "https://www.instagram.com/pupi_marti",
-            },
-            {
-              id: 2,
-              red: "whatsapp",
-              url: "https://www.linkedin.com/in/pupimarti",
-            },
-          ]}
+          social={[]}
           edit={props.edit}
         />
         <Circle
-          img="https://www.webcampus.uade.edu.ar/Fotos/1/ID_993091.jpg"
+          img={imgNicolas}
           name="Nicolas Gladkoff"
-          position=""
-          social={[
-            {
-              id: 0,
-              red: "none",
-              url: "",
-            },
-            {
-              id: 1,
-              red: "none",
-              url: "",
-            },
-            {
-              id: 2,
-              red: "none",
-              url: "",
-            },
-          ]}
+          position="Alumno de Maestría - Desarrollador"
+          social={[]}
           edit={props.edit}
         />
         <Circle
-          img={img}
-          name="Juan Agustín Martí"
-          position="Desarrollo web"
-          social={[
-            {
-              id: 0,
-              red: "facebook",
-              url: "https://www.facebook.com/pupimarti",
-            },
-            {
-              id: 1,
-              red: "instagram",
-              url: "https://www.instagram.com/pupi_marti",
-            },
-            {
-              id: 2,
-              red: "linkedin",
-              url: "https://www.linkedin.com/in/pupimarti",
-            },
-          ]}
+          img={noImg}
+          name="Andrés Caroni"
+          position="Desarrollo Mobile"
+          social={[]}
           edit={props.edit}
         />
         <Circle
-          img={img}
-          name="Juan Agustín Martí"
-          position="Desarrollo web"
-          social={[
-            {
-              id: 0,
-              red: "facebook",
-              url: "https://www.facebook.com/pupimarti",
-            },
-            {
-              id: 1,
-              red: "instagram",
-              url: "https://www.instagram.com/pupi_marti",
-            },
-            {
-              id: 2,
-              red: "linkedin",
-              url: "https://www.linkedin.com/in/pupimarti",
-            },
-          ]}
+          img={imgAna}
+          name="Ana Martinez Saucedo"
+          position="Desarrollo Mobile"
+          social={[]}
           edit={props.edit}
         />
         <Circle
-          img={img}
-          name="Juan Agustín Martí"
-          position="Desarrollo web"
-          social={[
-            {
-              id: 0,
-              red: "facebook",
-              url: "https://www.facebook.com/pupimarti",
-            },
-            {
-              id: 1,
-              red: "instagram",
-              url: "https://www.instagram.com/pupi_marti",
-            },
-            {
-              id: 2,
-              red: "linkedin",
-              url: "https://www.linkedin.com/in/pupimarti",
-            },
-          ]}
+          img={noImg}
+          name="Iván Cuadrado"
+          position="Desarrollador"
+          social={[]}
+          edit={props.edit}
+        />
+        <Circle
+          img={noImg}
+          name="Diego Perez"
+          position="Desarrollador"
+          social={[]}
           edit={props.edit}
         />
       </div>

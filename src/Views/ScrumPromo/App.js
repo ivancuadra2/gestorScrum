@@ -8,7 +8,6 @@ import 'aos/dist/aos.css'; // You can also use <link> for styles
 import './icons.css';
 
 
-
 // ..
 AOS.init({
   // Global settings:
