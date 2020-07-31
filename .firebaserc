@@ -2,6 +2,7 @@
   "projects": {
     "default": "gestorscrum",
     "gestor": "gestorscrum",
-    "gestorScrum": "gestorscrum"
+    "gestorScrum": "gestorscrum",
+    "SCRUM": "gestorscrum"
   }
 }
