@@ -5,3 +5,12 @@
     height: 100vh;
     width: 100vw;
 }
+.nav{
+    background: linear-gradient(90deg, #ab31d4 0%, hsl(338, 78%, 48%) 100%);
+
+}
+
+.UID{
+     
+    width: 2rem;
+}

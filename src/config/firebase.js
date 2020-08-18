@@ -35,7 +35,7 @@ class Firebase {
     signOut = () => console.log('llegue a sign out') ;//this.auth.signOut();
 
     logout =  async () =>  {
-        console.log('logout :' ,  this.auth.signOut())
+        //console.log('logout :' ,  this.auth.signOut())
         return await this.auth.signOut();
     }
 

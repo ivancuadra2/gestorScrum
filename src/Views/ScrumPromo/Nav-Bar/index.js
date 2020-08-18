@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import './css.css';
 import logo from './logo2.png'
-// import Buttons from './Buttons'
+import Buttons from './Buttons'
 import Burger from './Burger'
 
 export default function Nav() {
@@ -34,7 +34,7 @@ export default function Nav() {
                 data-aos-duration="1000">
                 <div className="content-width nav">
                     <img className="logo" src={logo} alt="SCRUM Game" />
-                    {/* <Buttons classButtons={classButtons} /> */}
+                    <Buttons classButtons={classButtons} />
                     <Burger onClickBurger={onClickBurger} />
                 </div>
             </div>

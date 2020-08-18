@@ -18,7 +18,6 @@ class AdminRepo extends Component {
         try {
             let coleccion = await firebase.db.collection(collection).get();
             let usuarios = coleccion.docs.map(doc => doc.id);
-            console.log("usuarios", usuarios)
             return usuarios;
         } catch (error) {
             console.log("Error en el Repo", error)
@@ -27,18 +26,14 @@ class AdminRepo extends Component {
     };
 
     getExistsAdmin = async function (email) {      // Buscamos el admin por ID para verificar que esté en la base de datos
-        console.log("Llegue al repo de admin con el email", email);
         try{
           let doc = await firebase.db.collection(collection).doc(email).get()
         
           if (!doc.exists) {
-            console.log('No such document!');
             return false;
           } else {
-            console.log('Document data:', doc.data());
             return true; 
           }
-        
         }
         catch(err){
           console.log('Error getting document', err);

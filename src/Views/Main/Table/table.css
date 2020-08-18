@@ -3,3 +3,7 @@
     height: 500px;
     box-shadow: 0 0 10px #000;
 }
+
+.card{
+    justify-content: center;
+}
