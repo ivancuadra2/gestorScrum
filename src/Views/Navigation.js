@@ -1,10 +1,8 @@
 import React from 'react';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
-import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap/';
+import { Navbar, Nav } from 'react-bootstrap/';
 import logo from '../Views/ScrumPromo/Nav-Bar/logo2.png'
 import firebase from '../config/firebase';
 import { withRouter } from 'react-router-dom';
-import UserController from '../Controller/UserController';
 import './NavigationStyle.css'
 
 
@@ -21,19 +19,9 @@ async function logOut(props) {
 }
 
 function Navigation(props) {
-  const [open, setOpen] = React.useState(false);
-  const { history } = props;
+  //const { history } = props;
   const { email, img } = props;
   
-  let users;
-
-  async function handleGetUsers(e) {
-    users = await UserController.getAllUsers();
-    console.log(users);
-
-  }
-
-
   return (
     <Navbar className="nav" bg="dark" variant="dark">
       <img className="logo" src={logo} alt="SCRUM Game" />

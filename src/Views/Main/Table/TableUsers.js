@@ -5,14 +5,16 @@ import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEye } from '@fortawesome/free-solid-svg-icons'
+import { faEye } from '@fortawesome/free-solid-svg-icons';
+import Spinner from 'react-bootstrap/Spinner';
 
 
 
 export default function TableUsers() {
   const [users, setUsers] = useState("loading");
   const [levels, setLevels] = useState([]);
-  const [name, setName]= useState("Seleccione un usuario")
+  const [name, setName] = useState("Seleccione un usuario")
+
 
   useEffect(() => {
     const getUsers = async () => {
@@ -27,15 +29,23 @@ export default function TableUsers() {
 
   async function clickEye(mail) {
     let array_levels = await UserRepo.getLevels(mail);
-    if(!array_levels){
+    if (!array_levels) {
       alert("No hay usuario")
-    }else{
+    } else {
       setName(mail)
       setLevels(array_levels);
     }
   }
 
-  if (users === 'loading') return <div className="loading"></div>
+  if (users === 'loading') return (
+    <div className="cuerpo">
+      <Spinner animation="border" role="status" className="spinner">
+        <span className="sr-only">Loading...</span>
+      </Spinner>
+    </div>
+
+
+  )
 
   return (
     <div>
@@ -77,7 +87,7 @@ export default function TableUsers() {
       </Card>
 
       <Card className="text-center">
-            <Card.Title>{name}</Card.Title>
+        <Card.Title>{name}</Card.Title>
 
         <Card.Body>
 

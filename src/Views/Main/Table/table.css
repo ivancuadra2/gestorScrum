@@ -7,3 +7,17 @@
 .card{
     justify-content: center;
 }
+
+.cuerpo{
+    
+    height: 20rem;
+    /*IMPORTANTE*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-title{
+  margin-top: 2rem;
+  margin-bottom: 0em;  
+}

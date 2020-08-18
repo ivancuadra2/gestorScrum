@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "./table.css";
 import UserRepo from "../../../Repository/UserRepo";
 import Table from 'react-bootstrap/Table';
 import Card from 'react-bootstrap/Card';
@@ -8,26 +7,17 @@ import { faEye } from '@fortawesome/free-solid-svg-icons'
 
 
 
-export default function TableUsers() {
-  const [users, setUsers] = useState("loading");
-  const [levels, setLevels] = useState([]);
+export default function TableLevel(props) {
+  const { email, levels } = props;
 
 
-  useEffect(() => {
-    const getUsers = async () => {
-      let array_levels = UserRepo.getLevels("anmartinez@uade.edu.ar");// id que es el email
-      setUsers(array_users)
 
-    };
-
-    if (users === "loading") getUsers();
-  }, [users]);
-
-  if (users === 'loading') return <div className="loading"></div>
+  if (levels === 'loading') return <div className="loading"></div>
 
   return (
     <div>
       <Card>
+        <Card.Title>{email}</Card.Title>
         <Card.Body>
           <Table striped bordered hover  >
             <thead>
