@@ -5,6 +5,7 @@ import SignUp from './Views/LogIn';
 import Main from './Views/Main/Main';
 import promoScrum from './Views/ScrumPromo/App';
 
+
 //firebase.initializeApp(firebaseConfig)
 
 function App() {
