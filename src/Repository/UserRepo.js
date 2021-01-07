@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import firebase from '../config/firebase';
 const collection = 'users';
+const PSYCHO_USERS_COLLECTION = "usersPsycho";
 
 class UserRepo extends Component {
     constructor(props) {
@@ -48,8 +49,18 @@ class UserRepo extends Component {
 
     }
 
-
+    getPsychoUsers = async () => {
+        try {
+            let psychoUsers = [];
+            await firebase.db
+                .collection(PSYCHO_USERS_COLLECTION)
+                .get()
+                .then(querySnapshot => querySnapshot.forEach(u => psychoUsers.push({ id: u.id, ...u.data() })));
+            return psychoUsers;
+        } catch (error) {
+            throw new Error(error);
+        }
+    };
 }
-
 
 export default new UserRepo();
