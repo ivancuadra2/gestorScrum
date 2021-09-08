@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./css.css";
+import LanguageContext from "../../../../Context/index";
 // import AppStore from "./AppStore";
 import PlayStore from "./PlayStore";
 import img from "./img.png";
@@ -21,6 +22,8 @@ export default function Stores({ edit, title, text }) {
     handleDefaultProps();
   };
 
+  const { texts } = useContext(LanguageContext);
+
   if (edit)
     return (
       <section
@@ -30,9 +33,9 @@ export default function Stores({ edit, title, text }) {
         data-aos-duration="1000"
       >
         <div className="content-description">
-          <button className="button">GUARDAR SECCIÓN</button>
+          <button className="button">{texts.BUTTON_SAVE}</button>
           <button className="button" onClick={handleClickCancel}>
-            CANCELAR
+            {texts.BUTTON_CANCEL}
           </button>
 
           <textarea
@@ -50,7 +53,7 @@ export default function Stores({ edit, title, text }) {
             className="textarea"
           />
 
-           {/* <AppStore /> */}
+          {/* <AppStore /> */}
           <PlayStore />
         </div>
         <img src={img} alt="IOS y ANDROID" className="phones" />

@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import LanguageContext from "../../Context/index";
 import Header from './Header';
 import Nav from './Nav-Bar';
 import Body from './Body';
@@ -35,11 +36,12 @@ AOS.init({
 function App() {
 
   const edit = false;
-
+  const { texts } = useContext(LanguageContext);
+  
   return (
     <div>
       <Nav />
-      <Header edit={edit} text1='¡El juego ideal para aprender SCRUM!' />
+      <Header edit={edit} text1={texts.HEADER_TITLE} />
       <Body edit={edit} />
       <Footer />
     </div>

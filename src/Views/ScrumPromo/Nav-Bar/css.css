@@ -9,6 +9,8 @@
     padding-top: 8px;
     z-index: 2;
     transition: ease-in 0.3s;
+    justify-content: center;
+    align-items: center;
 }
 
 .invisible{
@@ -18,6 +20,7 @@
 .nav{
     padding: 10px 0;
     display: flex;
+    background: transparent;
     justify-content: space-between;
     align-items: center;
 }
@@ -26,4 +29,16 @@
     width: 200px;
     font-weight: bold;
     font-size: 2em;
+}
+
+.language{
+    width: 50px;
+    background: rgba(255, 255, 255, 0.178);
+    border: none;
+    user-select: none;
+    height: 30px;
+}
+
+.marginTop{
+    margin-top: 20px;
 }

@@ -117,7 +117,7 @@ export default function Circle(props) {
                     name="position" 
                     onChange={handleInputChange} 
                     value={data.position} 
-                    className="position-edit"
+                    className="position position-edit"
                     placeholder="Posicion"
                     />
                     <div className="social-edit">

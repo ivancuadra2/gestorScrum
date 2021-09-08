@@ -1,5 +1,6 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import ReactModal from 'react-modal';
+import LanguageContext from "../../../../../Context/index";
 import './css.css';
 
 export default function Modal({edit, title, text}) {
@@ -26,6 +27,7 @@ export default function Modal({edit, title, text}) {
         handleDefaultProps();
     }
    
+    const { texts } = useContext(LanguageContext);
 
     //ReactModal.setAppElement('#root')
 
@@ -58,8 +60,8 @@ export default function Modal({edit, title, text}) {
                     />
               </div>
       
-              <button className="button modal-close" onClick={handleCloseModal}>GUARDAR SECCIÓN</button>
-              <button className="button modal-close" onClick={handleClickCancel && handleCloseModal}>CANCELAR</button>
+              <button className="button modal-close" onClick={handleCloseModal}>{texts.BUTTON_SAVE}</button>
+              <button className="button modal-close" onClick={handleClickCancel && handleCloseModal}>{texts.BUTTON_CANCEL}</button>
               
              </ReactModal>
             
@@ -81,7 +83,7 @@ export default function Modal({edit, title, text}) {
                     <h2 className="modal-title">{title}</h2>
                     <p className="modal-text">{text}</p>
               </div>
-              <button className="button modal-close" onClick={handleCloseModal}>CERRAR</button>
+              <button className="button modal-close" onClick={handleCloseModal}>{texts.BUTTON_CLOSE}</button>
              </ReactModal>
             
            

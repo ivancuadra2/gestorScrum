@@ -20,7 +20,10 @@
 }
 
 .name{
+    padding-right: 15px;
+    text-align: center;
     font-size: 1.1em;
+    margin-top: 10px;
     margin-bottom: 0;
 }
 
@@ -30,6 +33,7 @@
 }
 
 .position{
+    padding-right: 15px;
     color: #aaa;
     margin: 0;
     font-size: 1em;
@@ -138,6 +142,10 @@
     }
     .name{
         margin: 0;
+        padding-right: 0;
+    }
+    .position{
+        padding-right: 0;
     }
     .circle.show{
         margin:10px;

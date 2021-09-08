@@ -1,4 +1,5 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
+import LanguageContext from '../../../../Context/index';
 import './css.css';
 import { Element } from 'react-scroll';
 import SvgTeam from './SvgTeam';
@@ -21,6 +22,7 @@ export default function WhatIsIt({edit, title, subtitle, subtitle2, text, text2}
         handleDefaultProps();
     }
 
+    const { texts } = useContext(LanguageContext);
     if(edit)
     return(
         <Element name="WhatItIs" className="content-section" 
@@ -36,8 +38,8 @@ export default function WhatIsIt({edit, title, subtitle, subtitle2, text, text2}
                         value={data.title} 
                         />
                     </div> 
-                        <button className="button">GUARDAR SECCIÓN</button>
-                        <button className="button" onClick={handleClickCancel}>CANCELAR</button>
+                        <button className="button">{texts.BUTTON_SAVE} </button>
+                        <button className="button" onClick={handleClickCancel}>{texts.BUTTON_CANCEL}</button>
                         <div className= "displayFlex">
                             <div className = "displayColumn" >
                                 <input 
@@ -88,9 +90,9 @@ export default function WhatIsIt({edit, title, subtitle, subtitle2, text, text2}
                     </div> 
                         <div className= "displayFlex">
                             <div className = "displayColumn" >
-                                <h3>{subtitle}</h3>
+                                <h3 className="subtitle">{subtitle}</h3>
                                 <p>{text}</p>
-                                <h3>{subtitle2}</h3>
+                                <h3 className="subtitle">{subtitle2}</h3>
                                 <p>{text2}</p>
                             </div>
                         <div className="displayColumn">

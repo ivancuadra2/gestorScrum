@@ -1,24 +1,28 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import LanguageContext  from '../../../Context/index';
 import WhatItIs from './WhatItIs';
 import Stores from './Stores';
 import Us from './Us';
 /* import News from './News'; */
 
 export default function Body(props) {
+
+    const { texts } = useContext(LanguageContext);
+
     return (
         <div>
             <WhatItIs 
                 edit={props.edit} 
-                title='¿Qué es Scrum Game?'
-                subtitle='Aprende de forma inteligente'
-                text='Scrum game es un juego serio cuyo objetivo es introducir a estudiantes de informática y desarrolladores de software en scrum. El juego está desarrollado para plataformas Android.'
-                subtitle2='Los videojuegos como una aproximación al Serious gaming.'
-                text2='Proyecto de investigación acreditado y aprobado por UADE'
+                title={texts.HEADER_BUTTON}
+                subtitle={texts.WHATISIT_SUBTITLE}
+                text={texts.WHATISIT_TEXT}
+                subtitle2={texts.WHATISIT_SUBTITLE2}
+                text2={texts.WHATISIT_TEXT2}
                 />
             <Stores 
                 edit={props.edit}
-                title='Accede desde cualquier dispositivo'
-                text='¡Puedes jugar en cualquier lugar y cualquier momento! Descarga nuestra aplicación disponible tanto para Android como para IOS.'
+                title={texts.STORES_TITLE}
+                text={texts.STORES_TEXT}
             />
             <Us 
                 edit={props.edit} 

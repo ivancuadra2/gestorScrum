@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useContext} from "react";
 import "./css.css";
 import img from "./scrum3.png";
 import { scroller } from "react-scroll";
 import Storage from "Repository/Storage";
+import LanguageContext from "../../../Context/index";
 
 const scrollType = {
   duration: 1000,
@@ -15,6 +16,7 @@ const onClickWhatItIs = () => {
 };
 
 export default function Header(props) {
+
   const [data, setData] = useState({ text1: props.text1 });
 
   const handleDefaultProps = () => {
@@ -30,6 +32,14 @@ export default function Header(props) {
   const handleClickCancel = (e) => {
     handleDefaultProps();
   };
+
+  const { texts } = useContext(LanguageContext);
+
+  const { language, setLanguage } = useContext(LanguageContext);
+
+  const handleChange = (e) => {
+    setLanguage(e.target.value);
+  }
 
   return (
     <div className="header">
@@ -51,35 +61,40 @@ export default function Header(props) {
           >
             {props.edit ? (
               <div>
-                <button className="button">GUARDAR</button>
+                <button className="button">{texts.BUTTON_SAVE}</button>
                 <button className="button" onClick={handleClickCancel}>
-                  CANCELAR
+                  {texts.BUTTON_CANCEL}
                 </button>
                 <input
                   type="text"
                   className="sentence edit"
                   name="text1"
-                  value={data.text1}
+                  //value={data.text1}
+                  value={texts.HEADER_TITLE}
                   onChange={handleInputChange}
                 />
               </div>
             ) : (
-              <h2 className="sentence">{data.text1}</h2>
+              <h2 className="sentence">{texts.HEADER_TITLE}</h2>
             )}
             <div className="content-buttons-header">
               <button
                 className="button white button-header"
                 onClick={onClickWhatItIs}
               >
-                ¿QUE ES SCRUM GAME?
+                {texts.HEADER_BUTTON}
               </button>
               <button
                 className="button transparent button-header-login"
                 onClick={() => Storage.getScrumGame()}
               >
-                COMENZAR A JUGAR
+                {texts.HEADER_BUTTON2}
               </button>
             </div>
+            <select className="language marginTop" value={language} onChange={handleChange} >
+          <option value="ES">ES</option>
+          <option value="EN">EN</option>
+        </select>
           </div>
         </div>
       </div>
